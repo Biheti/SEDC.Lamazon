@@ -1,0 +1,29 @@
+﻿@using SEDC.Lamazon.Services.ViewModels.ProductCategory;
+@model List<ProductCategoryViewModel>
+
+<h1>Product Categories</h1>
+@Html.ActionLink("Create", "Create", "ProductCategory")
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ProductCategoryViewModel item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    @Html.ActionLink("Edit", "Update", "ProductCategory")
+                    @Html.ActionLink("Delete", "Delete", "ProductCategory")
+                    @Html.ActionLink("Details", "Details", "ProductCategory")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

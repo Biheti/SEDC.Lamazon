@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using SEDC.Lamazon.DataAccess.Context;
+using SEDC.Lamazon.DataAccess.Inplementations;
+using SEDC.Lamazon.DataAccess.Interfaces;
+using SEDC.Lamazon.Domain.Entities;
+using SEDC.Lamazon.Services.Implementations;
+using SEDC.Lamazon.Services.Interfaces;
 
 namespace SEDC.Lamazon.Web;
 
@@ -17,6 +22,8 @@ public class Program
             options.UseSqlServer("Server=DESKTOP-T1Q6HKH\\SQLEXPRESS;Database=LamazonStoreDB;TrustServerCertificate=true;Trusted_Connection=True");
         });
 
+        builder.Services.AddScoped<IProductCategoryRepositoory, ProductCategoryRepositoory>();
+        builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -26,6 +33,7 @@ public class Program
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
+        
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();

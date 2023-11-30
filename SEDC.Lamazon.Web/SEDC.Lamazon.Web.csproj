@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SEDC.Lamazon.DataAccess\SEDC.Lamazon.DataAccess.csproj" />
+    <ProjectReference Include="..\SEDC.Lamazon.Services\SEDC.Lamazon.Services.csproj" />
   </ItemGroup>
 
 </Project>
