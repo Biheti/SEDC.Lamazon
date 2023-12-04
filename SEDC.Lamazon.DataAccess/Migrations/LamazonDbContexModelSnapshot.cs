@@ -10,7 +10,7 @@ using SEDC.Lamazon.DataAccess.Context;
 
 namespace SEDC.Lamazon.DataAccess.Migrations
 {
-    [DbContext(typeof(LamazonDbContex))]
+    [DbContext(typeof(LamazonDbContext))]
     partial class LamazonDbContexModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -65,8 +65,9 @@ namespace SEDC.Lamazon.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImageUrl")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

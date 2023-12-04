@@ -1,14 +1,12 @@
-﻿namespace SEDC.Lamazon.Domain.Entities;
+﻿namespace SEDC.Lamazon.Services.ViewModels.Product;
 
-public class Product : BaseEntity
+public class CreateProductViewModel
 {
-    //blob - binary large object
+    public int Id { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
     public string ImageUrl { get; set; }
     public decimal Price { get; set; }
 
     public int ProductCategoryId { get; set; }
-    public ProductCategory ProductCategory { get; set; }
-
 }

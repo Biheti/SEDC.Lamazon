@@ -3,9 +3,9 @@ using SEDC.Lamazon.Domain.Entities;
 
 namespace SEDC.Lamazon.DataAccess.Context;
 
-public class LamazonDbContex : DbContext
+public class LamazonDbContext : DbContext
 {
-    public LamazonDbContex(DbContextOptions options) : base(options) { }
+    public LamazonDbContext(DbContextOptions options) : base(options) { }
 
     public DbSet<Product> Products { get; set; }
     public DbSet<User> Users { get; set; }

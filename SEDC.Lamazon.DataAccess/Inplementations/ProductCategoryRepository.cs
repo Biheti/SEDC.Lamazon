@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace SEDC.Lamazon.DataAccess.Inplementations;
 
-public class ProductCategoryRepositoory : IProductCategoryRepositoory
+public class ProductCategoryRepository : IProductCategoryRepository
 {
-    private readonly LamazonDbContex _dbContext;
-    public ProductCategoryRepositoory (LamazonDbContex lamazonDbContex )
+    private readonly LamazonDbContext _dbContext;
+    public ProductCategoryRepository (LamazonDbContext lamazonDbContex )
     { _dbContext = lamazonDbContex; }
     public void Delete(int id)
     {

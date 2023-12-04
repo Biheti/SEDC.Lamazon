@@ -7,8 +7,8 @@ namespace SEDC.Lamazon.Services.Implementations
 {
     public class ProductCategoryService : IProductCategoryService
     {
-        private readonly IProductCategoryRepositoory _productCategoryRepository;
-        public ProductCategoryService(IProductCategoryRepositoory productCategoryRepository) 
+        private readonly IProductCategoryRepository _productCategoryRepository;
+        public ProductCategoryService(IProductCategoryRepository productCategoryRepository) 
         {
             _productCategoryRepository = productCategoryRepository;
         }

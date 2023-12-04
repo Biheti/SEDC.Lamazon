@@ -17,12 +17,16 @@ public class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
 
-        builder.Services.AddDbContext<LamazonDbContex>(options =>
+        builder.Services.AddDbContext<LamazonDbContext>(options =>
         {
             options.UseSqlServer("Server=DESKTOP-T1Q6HKH\\SQLEXPRESS;Database=LamazonStoreDB;TrustServerCertificate=true;Trusted_Connection=True");
         });
 
-        builder.Services.AddScoped<IProductCategoryRepositoory, ProductCategoryRepositoory>();
+
+        builder.Services.AddScoped<IProductRepository,ProductRepository >();
+        builder.Services.AddScoped<IProductService, ProductService>();
+
+        builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
         builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
         var app = builder.Build();
 

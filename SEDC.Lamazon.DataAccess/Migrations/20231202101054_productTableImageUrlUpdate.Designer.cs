@@ -12,8 +12,8 @@ using SEDC.Lamazon.DataAccess.Context;
 namespace SEDC.Lamazon.DataAccess.Migrations
 {
     [DbContext(typeof(LamazonDbContext))]
-    [Migration("20231128191744_initMigration")]
-    partial class initMigration
+    [Migration("20231202101054_productTableImageUrlUpdate")]
+    partial class productTableImageUrlUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,8 +67,9 @@ namespace SEDC.Lamazon.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImageUrl")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

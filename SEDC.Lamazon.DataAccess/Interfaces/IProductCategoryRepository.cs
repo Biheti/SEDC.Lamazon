@@ -2,7 +2,7 @@
 
 namespace SEDC.Lamazon.DataAccess.Interfaces;
 
-public interface IProductCategoryRepositoory
+public interface IProductCategoryRepository
 {
     List<ProductCategory> GetAll();
     ProductCategory Get(int id);
