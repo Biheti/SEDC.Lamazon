@@ -22,6 +22,9 @@ public class Program
             options.UseSqlServer("Server=DESKTOP-T1Q6HKH\\SQLEXPRESS;Database=LamazonStoreDB;TrustServerCertificate=true;Trusted_Connection=True");
         });
 
+        builder.Services.AddScoped<IUserRepository, UserRepository>();
+        builder.Services.AddScoped<IUserService, UserService>();
+
 
         builder.Services.AddScoped<IProductRepository,ProductRepository >();
         builder.Services.AddScoped<IProductService, ProductService>();
