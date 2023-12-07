@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SEDC.Lamazon.Web.Models;
 using System.Diagnostics;
 
@@ -27,6 +28,12 @@ namespace SEDC.Lamazon.Web.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [Authorize]
+        public IActionResult UserInfo() 
+        {
+            return View();
         }
     }
 }

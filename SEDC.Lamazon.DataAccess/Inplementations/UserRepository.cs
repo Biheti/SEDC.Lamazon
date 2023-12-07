@@ -1,4 +1,5 @@
-﻿using SEDC.Lamazon.DataAccess.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using SEDC.Lamazon.DataAccess.Context;
 using SEDC.Lamazon.DataAccess.Interfaces;
 using SEDC.Lamazon.Domain.Entities;
 namespace SEDC.Lamazon.DataAccess.Inplementations
@@ -75,6 +76,7 @@ namespace SEDC.Lamazon.DataAccess.Inplementations
         {
             return _dbContext
                 .Users
+                .Include(u => u.Role)
                 .Where(u => u.Email == email)
                 .FirstOrDefault();
         }
