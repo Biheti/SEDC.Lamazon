@@ -29,6 +29,7 @@ namespace SEDC.Lamazon.DataAccess.Inplementations
         {
             Product product = _lamazonDbContex
                 .Products
+                .Include(x => x.ProductCategory)
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
 

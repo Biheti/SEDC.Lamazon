@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SEDC.Lamazon.Services.Interfaces;
+using SEDC.Lamazon.Services.ViewModels.Product;
 using SEDC.Lamazon.Web.Models;
 using System.Diagnostics;
 
@@ -8,16 +10,26 @@ namespace SEDC.Lamazon.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductService productService)
         {
             _logger = logger;
+            _productService = productService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<ProductViewModel > products = _productService.GetAllProducts();
+            return View(products);
         }
+
+        public IActionResult ProductDetails( int id) 
+        {
+            var productDetails = _productService.GetProductById(id);
+            return View(productDetails);
+        }
+
 
         public IActionResult Privacy()
         {
