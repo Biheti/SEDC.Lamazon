@@ -10,4 +10,6 @@ public class Order : BaseEntity
 
     public bool IsActive { get; set; }
     public decimal TotalPrice { get; set; } 
+
+    public virtual IEnumerable<OrderItem> Items { get; set;}
 }

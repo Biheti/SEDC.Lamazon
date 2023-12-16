@@ -33,6 +33,14 @@ public class Program
         builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
         builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
 
+        builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+        builder.Services.AddScoped<IOrderService, OrderService>();
+
+        builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+        builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+
+
+
 
         //Set 
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

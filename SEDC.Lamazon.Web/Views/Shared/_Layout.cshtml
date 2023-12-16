@@ -59,6 +59,13 @@
 
                 @if (User.Identity.IsAuthenticated)
                 {
+                    if (User.IsInRole("User"))
+                    {
+                        <span class="label">
+                            <a asp-action="ShoppingCart" asp-controller="Order" class="nav-link text-dark"> <strong>( Cart Items )</strong></a>
+                        </span>
+                    }
+
                     <span class="label"><strong>@User.Identity.Name</strong></span>
 
                     <a type="button" class="btn btn-warning" asp-controller="User" asp-action="Logout">Logout</a>
